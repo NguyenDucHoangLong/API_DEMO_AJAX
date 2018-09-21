@@ -1,0 +1,29 @@
+﻿.reset-this {
+    all: inherit;
+}
+
+.redo-fieldset {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.redo-legend {
+    color: black;
+}
+
+.boldLabel {
+    font-weight: bold;
+}
+
+#canvas {
+    border: 1px solid red;
+}
+
+input.invalid, textarea.invalid {
+    border: 2px solid red;
+}
+
+input.valid, textarea.valid {
+    border: 2px solid green;
+}
+

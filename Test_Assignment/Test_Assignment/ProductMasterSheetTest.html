@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var ulLocations = $("#ulLocations");
+
+            $('#btn').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: '/api/TestAssignment',
+                    dataType: 'json',
+                    success: function (data) {
+                        ulLocations.empty();
+                        alert(JSON.stringify(data));
+                        $.each(data, function (index, val) {
+                            var location = val["Location1"];
+                            ulLocations.append('<li>' + location + '</li>');
+                        });
+                    }
+                });
+            });
+
+            $('#btnClear').click(function () {
+                ulLocations.empty();
+            });
+        });
+    </script>
+</head>
+<body>
+    <input id="btn" type="button" value="Get All Locations"/>
+    <input id="btnClear" type="button" value="clear"/>
+    <ul id="ulLocations"></ul>
+</body>
+</html>

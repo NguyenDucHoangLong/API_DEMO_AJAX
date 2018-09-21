@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>PRODUCT MASTER SHEET</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link href="Content/ProductMasterSheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/redmond/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.4/css/ui.jqgrid.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.15.4/jquery.jqgrid.min.js"></script>
+    <script src="http://opoloo.github.io/jquery_upload_preview/assets/js/jquery.uploadPreview.js"></script>
+
+
+    <script src="Scripts/ProductMasterSheet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="text-align:center">
+            <div class="col">
+                <h1>PRODUCT MASTER SHEET</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form>
+                    <div class="form-group">
+                        <fieldset class="reset-this redo-fieldset" style="margin-left: 10px;">
+                            <legend class="reset-this redo-legend"><b>Product Master</b></legend>
+                            <div class="row">
+                                <!-- Column 1 -->
+                                <div class="col-7">
+
+                                    <!-- Row 1 -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col col-3">
+                                                    <label id="ProductNumberlbl" for="ProductNumber"><b>Product Number</b></label>
+                                                </div>
+                                                <div class="col col-3">
+                                                    <input type="number" style="width:80px;" id="ProductNumber" class="form-control" />
+                                                </div>
+                                                <div class="col col-2">
+                                                    <label id="PackSizelbl" for="PackSize"><b>Pack Size</b></label>
+                                                </div>
+                                                <div class="col col-4">
+                                                    <input type="number" id="PackSize" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <!-- Row 2 -->
+                                    <div class="row">
+                                        <div class="col col-3">
+                                            <label id="Descriptionlbl" for="Description"><b>Description</b></label>
+                                        </div>
+                                        <div class="col col-9">
+                                            <textarea style="height:124px; width:450px;" id="Description" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Column 2 -->
+                                <div class="col col-5">
+                                    <div class="row">
+                                        <fieldset class="reset-this redo-fieldset" style="margin-left: 10px;">
+                                            <legend class="reset-this redo-legend"><b>Product Image</b></legend>
+                                            <div class="row">
+                                                <div class="col col-5">
+                                                    <img id="image_upload_preview" src="http://placehold.it/100x100" alt="your image" width="100" height="100" />
+                                                </div>
+                                                <div class="col col-7">
+                                                    <div class="row">
+                                                        <input type='file' id="inputFile" />
+                                                        <br>
+                                                    </div>
+                                                    <div class="row">
+                                                        <button type="button" id="DiscardLogobutton"  class="btn" style="width:200px;">Discard Logo</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" 
+                   aria-controls="nav-home" aria-selected="true" style="padding-left:230px; padding-right: 230px;" >Basic Information</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" 
+                   aria-controls="nav-profile" aria-selected="false" style="padding-left:220px;padding-right: 230px;">Inventory</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col">
+                                <br>
+                                <input type="checkbox" aria-label="Checkbox for following text input" id="HazardousMeterial">
+                                <label class="boldLabel">Hazardous Meterial!</label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="boldLabel" id="CostCenterCodelbl" for="CostCenterCode">Cost Center Code</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" id="CostCenterCode" class="form-control">
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="boldLabel" id="ExpirationDatelbl" for="ExpirationDate">Expiration Date</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="date" name="bday" max="3000-12-31" min="1000-01-01" class="form-control" id="ExpirationDate" data-date-format="MMMM/DD/YYYY">
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="boldLabel" id="UnitPricelbl" for="UnitPrice">Unit Price</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="number" id="UnitPrice" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-6">
+                        <br>
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="boldLabel" id="Widthlbl" for="Width">Width</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="number" id="Width" class="form-control" >
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="boldLabel" id="Lengthlbl" for="Length">Length</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="number" id="Length" class="form-control" >
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="boldLabel" id="Heightlbl" for="Height">Height</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="number" id="Height" class="form-control" >
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="boldLabel">Cube</label>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" id="Cube" class="form-control" readonly="readonly">
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <input type="checkbox" aria-label="Checkbox for following text input" id="PreBack">
+                                <label class="boldLabel">Pre-Pack!</label>
+                            </div>
+                            <div class="col-8">
+                                <select name="Solid Styles" size="1" id="PreBackStyle" class="form-control">
+                                    <option>Solid Style</option>
+                                    <option>Regular Style</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <br />
+                <table id="GridInventory"></table>
+                <br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <i class="fa fa-save" style="font-size:30px;color:blue"></i>
+                <a id="SaveButton" href="#" style="font-size:25px;">Save</a>
+            </div>
+    </div>
+        </div>
+
+    <div id="SaveDialog" title="Save dialog">
+        <p></p>
+    </div>
+</body>
+
+</html>
